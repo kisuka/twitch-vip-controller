@@ -1,0 +1,49 @@
+{
+  "name": "vip-controller",
+  "version": "0.0.1",
+  "description": "An app to help Twitch Partners automate VIP redemption and removal.",
+  "main": "./dist/main/index.js",
+  "scripts": {
+    "dev": "node .electron-nuxt/dev.js",
+    "build": "node .electron-nuxt/build.js",
+    "test": "",
+    "preinstall": "node .electron-nuxt/check-engines.js",
+    "postinstall": "electron-builder install-app-deps "
+  },
+  "author": "kisuka <kisuka@kisuka.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.13.0"
+  },
+  "resolutions": {
+    "@types/node": "14.14.31"
+  },
+  "devDependencies": {
+    "@mdi/font": "5.6.55",
+    "@xpda-dev/core": "^0.1.5",
+    "@xpda-dev/electron-builder": "^0.2.1",
+    "@xpda-dev/electron-launcher": "^0.2.1",
+    "@xpda-dev/webpack-step": "^0.1.2",
+    "browser-env": "3.3.0",
+    "buefy": "0.9.3",
+    "cross-env": "7.0.2",
+    "deepmerge": "4.2.2",
+    "electron": "9.4.3",
+    "electron-builder": "22.8.1",
+    "electron-debug": "3.1.0",
+    "native-ext-loader": "2.3.0",
+    "nuxt": "2.14.5",
+    "vue-devtools": "5.1.4",
+    "webpack": "4.44.2",
+    "webpack-node-externals": "2.5.2"
+  },
+  "dependencies": {
+    "sqlite3": "^5.0.2",
+    "tmi.js": "^1.7.1",
+    "twitch": "^4.4.11",
+    "twitch-auth": "^4.4.11",
+    "twitch-electron-auth-provider": "^4.4.11",
+    "twitch-pubsub-client": "^4.4.11",
+    "ws": "^7.4.3"
+  }
+}
