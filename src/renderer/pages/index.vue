@@ -124,7 +124,6 @@ async function init () {
   twitchAPI = new ApiClient({ authProvider })
   
   chatAPI = new tmi.Client({
-    options: { debug: true, messagesLogLevel: "info" },
     connection: {
       reconnect: true,
       secure: true
@@ -169,13 +168,13 @@ async function appInit () {
 }
 
 export default {
-  async created() {
+  created() {
     if (!this.accessToken) {
       return this.$router.push('/login')
     }
 
     initDB()
-    await init()
+    init()
   },
   data () {
     return {
@@ -189,6 +188,10 @@ export default {
     .catch(err => {
       this.$nuxt.error({ statusCode: err.body.status, message: err.body.message })
     })
+
+    if (rewards === undefined) {
+      return this.$nuxt.error({ statusCode: 403, message: "Channel points are not available for the broadcaster" })
+    }
 
     this.rewards = rewards
   },
@@ -213,6 +216,10 @@ export default {
       if (this.rewardId == '') {
         alert('You need to select your VIP channel reward.')
         return
+      }
+
+      if (chatAPI == null) {
+        init()
       }
 
       appInit()

@@ -8,7 +8,7 @@ const DEV_SERVER_URL = process.env.DEV_SERVER_URL // eslint-disable-line prefer-
 const winHandler = new BrowserWinHandler({
   height: 500,
   width: 400,
-  resizable: false,
+  resizable: (isDev ? true : false),
 })
 
 winHandler.onCreated(browserWindow => {
