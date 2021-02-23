@@ -1,6 +1,6 @@
 # VIP Controller
 
-> An app to help Twitch Partners automate VIP redemption and removal.
+> An app to help Twitch streamers automate VIP redemption and removal.
 
 #### Streamer Setup
 
