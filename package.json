@@ -1,7 +1,7 @@
 {
   "name": "vip-controller",
-  "version": "0.0.2",
-  "description": "An app to help Twitch Partners automate VIP redemption and removal.",
+  "version": "0.0.3",
+  "description": "An app to help Twitch streamers automate VIP redemption and removal.",
   "main": "./dist/main/index.js",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",

@@ -12,7 +12,7 @@
 6. Enter how many days you want a VIP badge to remain.
 7. When ready click on the Start button.
 
-#### Build Setup
+#### Development Help
 
 ``` bash
 # install dependencies

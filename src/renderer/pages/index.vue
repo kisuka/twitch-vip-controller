@@ -4,7 +4,7 @@
       <b-field label="VIP Channel Reward">
         <b-select placeholder="Select a reward" :value="rewardId" @input="updateVipReward" expanded>
           <option
-            v-for="option in rewards.data"
+            v-for="option in rewards"
             :value="option.id"
             :key="option.id">
             {{ option.title }}
@@ -13,7 +13,7 @@
       </b-field>
 
       <b-field label="VIP Status Expiry (in days)" message="Put 0 for no expiry">
-        <b-numberinput :value="vipExpireDays" :min="0" @input="updateVipExpireDays" />
+        <b-numberinput :value="parseInt(vipExpireDays)" :min="0" @input="updateVipExpireDays" />
       </b-field>
 
       <hr />
@@ -183,8 +183,11 @@ export default {
     }
   },
   async fetch() {
+    if (twitchAPI == null) {
+      init()
+    }
+
     const rewards = await twitchAPI.helix.channelPoints.getCustomRewards(this.userId)
-    .then((res) => res.json())
     .catch(err => {
       this.$nuxt.error({ statusCode: err.body.status, message: err.body.message })
     })
@@ -216,10 +219,6 @@ export default {
       if (this.rewardId == '') {
         alert('You need to select your VIP channel reward.')
         return
-      }
-
-      if (chatAPI == null) {
-        init()
       }
 
       appInit()
