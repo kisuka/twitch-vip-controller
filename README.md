@@ -42,10 +42,12 @@ yarn run build
 
 **Answer:** Due to the fact that this app needs permissions for redemptions and can create chat messages using your broadcaster account, I figured that streamers would feel safer knowing that they control the application and the connection to it rather than some random web application where they don't know the person controlling the app.
 
+##
 **Question:** Will this auto-add VIP redemptions that were redeemed while I was not streaming?
 
 **Answer:** It can but only if VIP Controller is still running on a computer somewhere. It currently cannot process redemptions that happened while it wasn't running.
 
+##
 **Question:** How exactly does this work?
 
 **Answer:** When you start VIP Controller, it checks a database file which is saved on your computer to see if any previously redeemed VIPs have expired based off your settings. If there are expired VIPs, it will trigger `/unvip` commands in your channel's chat using your account for that VIP. Once that is done, the app begins listening for any custom reward redemptions, if the reward redeemed is the one you set in your settings, it will perform a `/vip` command in your chat using your account and add the user's information to the local database file so it can be checked for expiration later.
