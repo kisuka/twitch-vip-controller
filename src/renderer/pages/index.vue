@@ -103,13 +103,25 @@ function removeVips () {
 
   db.all("SELECT * FROM vips WHERE expires_at <= ?", [date], (err, rows) => {
     rows.forEach((row) => {
-      chatAPI.unvip(channelName, row.user_name).then((data) => {
+      chatAPI.unvip(channelName, row.user_name)
+      .then((data) => {
         db.run("DELETE FROM vips WHERE user_id = ?", row.user_id)
+      })
+      .catch(err => {
+        switch (err) {
+          // Invalid username provided
+          case 'invalid_user':
+          // Not a VIP in channel
+          case 'bad_unvip_grantee_not_vip':
+            db.run("DELETE FROM vips WHERE user_id = ?", row.user_id)
+          break;
+        }
+      })
+      .finally(() => {
+        db.close()
       })
     })
   })
-
-  db.close()
 }
 
 /**
@@ -161,7 +173,10 @@ async function appInit () {
         addVip(message.userId, message.userName)
 
         // Mark redemption as fulfilled
-        twitchAPI.helix.channelPoints.updateRedemptionStatusByIds(broadcaster, rewardId, [message.id], "FULFILLED")
+        // TODO: Disabled currently since you can only update redemptions for rewards created via the same client id.
+        // This would require letting VIP Controller create the reward instead of via the twitch dashboard.
+        // 
+        // twitchAPI.helix.channelPoints.updateRedemptionStatusByIds(broadcaster, rewardId, [message.id], "FULFILLED")
       })
     }
   });
