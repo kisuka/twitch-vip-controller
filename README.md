@@ -38,7 +38,7 @@ yarn run build
 
 ## FAQ
 
-**Question:** Why is this a computer application?
+**Question:** Why is this a desktop application?
 
 **Answer:** Due to the fact that this app needs permissions for redemptions and can create chat messages using your broadcaster account, I figured that streamers would feel safer knowing that they control the application and the connection to it rather than some random web application where they don't know the person controlling the app.
 
