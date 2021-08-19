@@ -1,6 +1,6 @@
 {
   "name": "vip-controller",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An app to help Twitch streamers automate VIP redemption and removal.",
   "main": "./dist/main/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "sqlite3": "^5.0.2",
-    "tmi.js": "^1.7.1",
+    "tmi.js": "^1.8.5",
     "twitch": "^4.4.11",
     "twitch-auth": "^4.4.11",
     "twitch-electron-auth-provider": "^4.4.11",

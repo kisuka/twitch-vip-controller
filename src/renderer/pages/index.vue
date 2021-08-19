@@ -1,6 +1,12 @@
 <template>
   <section class="section">
     <div class="container">
+      <b-field>
+        <b-button type="is-danger" @click="signOut" expanded>Sign Out</b-button>
+      </b-field>
+
+      <hr />
+
       <b-field label="VIP Channel Reward">
         <b-select placeholder="Select a reward" :value="rewardId" @input="updateVipReward" expanded>
           <option
@@ -245,6 +251,10 @@ export default {
       chatAPI.disconnect()
 
       this.started = false
+    },
+    signOut() {
+      this.$store.dispatch('settings/setAccessToken', null)
+      return this.$router.push('/login')
     }
   }
 }

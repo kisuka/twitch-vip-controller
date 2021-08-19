@@ -8968,13 +8968,13 @@ timsort@^0.3.0:
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
-tmi.js@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/tmi.js/-/tmi.js-1.7.1.tgz#dbd250e49a35ad238eec29bd2237c8efe4db6555"
-  integrity sha512-QCGDjVT0i8GZ99paBsaXDvd++A7PzW051S2BSXClMni5gDj5wUV6+YIZAwUtLkvbR/lD9QlqjNJloCNuFYGo+A==
+tmi.js@^1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/tmi.js/-/tmi.js-1.8.5.tgz#8298821677599f163af075113f5d1bd51a648087"
+  integrity sha512-A9qrydfe1e0VWM9MViVhhxVgvLpnk7pFShVUWePsSTtoi+A1X+Zjdoa7OJd7/YsgHXGj3GkNEvnWop/1WwZuew==
   dependencies:
-    node-fetch "2.6.1"
-    ws "7.4.0"
+    node-fetch "^2.6.1"
+    ws "^8.2.0"
 
 tmp@^0.0.33:
   version "0.0.33"
@@ -9874,11 +9874,6 @@ write-json-file@^2.3.0:
     sort-keys "^2.0.0"
     write-file-atomic "^2.0.0"
 
-ws@7.4.0:
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.0.tgz#a5dd76a24197940d4a8bb9e0e152bb4503764da7"
-  integrity sha512-kyFwXuV/5ymf+IXhS6f0+eAFvydbaBW3zjpT6hUdAh/hbVjTIB5EHBGi0bPoCLSK2wcuz3BrEkB9LrYv1Nm4NQ==
-
 ws@^6.0.0, ws@^6.1.2:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-6.2.1.tgz"
@@ -9890,6 +9885,11 @@ ws@^7.4.2, ws@^7.4.3:
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.3.tgz#1f9643de34a543b8edb124bdcbc457ae55a6e5cd"
   integrity sha512-hr6vCR76GsossIRsr8OLR9acVVm1jyfEWvhbNjtgPOrfvAlKzvyeg/P6r8RuDjRyrcQoPQT7K0DGEPc7Ae6jzA==
+
+ws@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.2.0.tgz#0b738cd484bfc9303421914b11bb4011e07615bb"
+  integrity sha512-uYhVJ/m9oXwEI04iIVmgLmugh2qrZihkywG9y5FfZV2ATeLIzHf93qs+tUNqlttbQK957/VX3mtwAS+UfIwA4g==
 
 xdg-basedir@^4.0.0:
   version "4.0.0"
